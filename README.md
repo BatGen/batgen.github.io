@@ -1,39 +1,16 @@
-# Jekyll-Bootstrap
+This is a simple yet powerful code generator that will generate the SQL, MyBatis mapper files, MyBatis interface files, supporting Data Access Object (DAO) and Business Object (BO) objects with the basic CRUD operations.
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+To keep it simple, we rely heavily on creating conventions for how projects are setup and how database column types are associated with corresponding class variable types.
 
-## Usage
+For this reason, we recommend using this product on new projects, as existing projects will already have established standards.
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+This is a conscious choice we made and it dramatically simplifies the setup and configuration of new projects. It also causes all projects that use this product to have a standard directory structure for the project.
 
-## Version
+Features include:
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
-
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
-
-## Contributing
-
-
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
-
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
-
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-**Jekyll-Bootstrap Documentation Website.**
-
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
-
+The code generator generates clean, readable and maintainable code that you check in with the rest of the code. There is a reserved area in each generated file that you can write custom code into. This reserved area is preserved during code generation, so if you change something, you can still maintain the code you wrote in it.
+Table definitions are stored in text files, and they describe the tables, columns, related classes, related class variables, and type information used to generate the code.
+The tutorial provides all the information you need to get started building applications using Eclipse and Maven.
 
 ## License
 

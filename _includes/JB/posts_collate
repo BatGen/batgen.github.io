@@ -29,7 +29,7 @@ Usage:
   
 <li style="list-style-type: none;">
 
-<a style="font-size: x-large;" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+<a style="font-size: large;" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
 <br>
 {{ post.date | date: "%B %e, %Y" }}
 

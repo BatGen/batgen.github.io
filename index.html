@@ -1,56 +1,75 @@
+--- 
+layout: index_layout 
 ---
-layout: index_layout
----
-    <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-                <meta name="description" content="">
-                    <meta name="author" content="">
-                        <link rel="icon" href="../../favicon.ico">
-                                
-                            <title>Jumbotron Template for Bootstrap</title>      
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container text-center splash">
-            <div id="batgen-logo"></div>
-            <h1>BatGen</h1>
-                
-            <p>A simple yet powerful tool for generating SQL, MyBatis files, and the supporting DAO/BO objects <i>all at once.</i></p>
-            <p><a href="../documentation.html" class="btn my-btn btn-lg" role="button">Documentation &raquo;</a></p>
-                
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Jumbotron Template for Bootstrap</title>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container text-center splash">
+        <div id="batgen-logo"></div>
+        <h1>BatGen</h1>
+
+        <p>
+            A simple yet powerful tool for generating SQL, MyBatis
+            files, and the supporting DAO/BO objects <i>all at once.</i>
+        </p>
+        <p>
+            <a href="../documentation.html" class="btn my-btn btn-lg"
+                role="button">Documentation &raquo;</a>
+        </p>
+
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Latest News</h2>
+            <div style="text-size: 15px">{% assign posts_collate =
+                site.posts %} {% include JB/posts_collate %}</div>
+        </div>
+        <div class="col-md-4">
+            <h2>
+                <i><b>Don't</b></i> use if you enjoy:
+            </h2>
+            <ul>
+                <li>Typing getters and setters.</li>
+                <li>Creating dozens of SQL tables.</li>
+                <li>Constantly coding CRUD commands.</li>
+                <li>Writing DAO's and BO's over and over again.</li>
+            </ul>
+            <h3>Otherwise, try BatGen!</h3>
+            Just format your variables into a text file to automate
+            these tedious tasks.
+
+            <p>
+                <a href="../getstarted.html" class="btn my-btn"
+                    role="button">Get started &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Open Source</h2>
+            <p>
+                BatGen is <i>free</i> for use under <a
+                    href="http://opensource.org/licenses/MIT">MIT
+                    license</a>.
+            </p>
+            <p>Download BatGen on GitHub or import BatGen from the
+                Maven Central Repository.</p>
+            <p>
+                <a href="https://github.com/BatGen/batGen"
+                    class="btn my-btn" role="button" target="_blank">Download
+                    &raquo;</a>
+            </p>
         </div>
     </div>
-        
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Latest News</h2>
-                <div style="text-size: 15px">
-                {% assign posts_collate = site.posts %}
-                {% include JB/posts_collate %}
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h2><i><b>Don't</b></i> use if you enjoy:</h2>
-                <ul>
-                    <li>Typing getters and setters.</li>
-                    <li>Creating dozens of SQL tables.</li>
-                    <li>Constantly coding CRUD commands.</li>
-                    <li>Writing DAO's and BO's over and over again.</li>
-                </ul>
-                <h3>Otherwise, try BatGen!</h3>
-                Just format your variables into a text file to automate these tedious tasks.
-                    
-                <p><a href="../getstarted.html" class="btn my-btn" role="button">Get started &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-                <h2>Open Source</h2>
-                <p>BatGen is <i>free</i> for use under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
-                <p>Download BatGen on GitHub or import BatGen from the Maven Central Repository.</p>
-                <p><a href="https://github.com/BatGen/batGen" class="btn my-btn" role="button" target="_blank">Download &raquo;</a></p>
-            </div>
-        </div>
-            
-    </div> <!-- /container -->
 
+</div>
+<!-- /container -->

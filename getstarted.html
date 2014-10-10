@@ -3,47 +3,49 @@ layout: page
 title: Getting Started
 header: Getting Started
 group: navigation
----
-{% include JB/setup %}
-
-<div class="col-md-3" style="text-align: center; list-style-type: square;">
+--- 
+<div class="col-md-3"
+    style="text-align: center; list-style-type: square;">
     <h1>Getting Started</h1>
     <br>
     <h3>Helpful Resources</h3>
     <ul style="text-align: left">
-    	<li><a href="http://maven.apache.org/" target="_blank">Maven Tool</a></li>
-    	<li><a href="http://blog.mybatis.org/" target="_blank">MyBatis Framework</a></li>
-    	<li><a href="http://www.h2database.com/html/main.html" target="_blank">H2 Database Engine</a></li>
+        <li><a href="http://maven.apache.org/" target="_blank">Maven
+                Tool</a></li>
+        <li><a href="http://blog.mybatis.org/" target="_blank">MyBatis
+                Framework</a></li>
+        <li><a href="http://www.h2database.com/html/main.html"
+            target="_blank">H2 Database Engine</a></li>
     </ul>
 </div>
 
 <div class="col-md-9">
-	<div>
-		<h3> How do I use batGen? </h3>
-	
-		It is highly recommended that you start out with an understanding of how to use MyBatis.
-        This product will not substitute the need for this knowledge.
-	</div>
-	<div>
-		<br>
-		For this tutorial, we will be using <a href="https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1" target="_blank">Eclipse Luna</a>, which already have Maven installed.
-		
-		<ol>
-			<li>
-				<a href="https://github.com/BatGen/batGen/archive/master.zip">Download</a> and extract files.
-			</li>
-			
-			<li>
-				Import batGen into Eclipse as existing Maven Projects.
-			</li>
-			
-			<li>
-				Create a new Maven project: select simple project, fill in required informations, click finish.
-			</li>
-			
-			<li>
-				Insert following dependencies into the pom.xml of the new project:
-				<pre>	
+    <div>
+        <h3>How do I use batGen?</h3>
+
+        It is highly recommended that you start out with an
+        understanding of how to use MyBatis. This product will not
+        substitute the need for this knowledge.
+    </div>
+    <div>
+        <br> For this tutorial, we will be using <a
+            href="https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1"
+            target="_blank">Eclipse Luna</a>, which already have Maven
+        installed.
+
+        <ol>
+            <li><a
+                href="https://github.com/BatGen/batGen/archive/master.zip">Download</a>
+                and extract files.</li>
+
+            <li>Import batGen into Eclipse as existing Maven
+                Projects.</li>
+
+            <li>Create a new Maven project: select simple project,
+                fill in required informations, click finish.</li>
+
+            <li>Insert following dependencies into the pom.xml of
+                the new project: <pre>	
 &lt;dependencies&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;batgen.lib&lt;/groupId&gt;
@@ -69,23 +71,21 @@ group: navigation
     &lt;/dependency&gt;
 &lt;/dependencies&gt;
     			</pre>
-			</li>
-			
-			<li>
-                Create a new file with the following example text and save as Employee.txt within src/test/resources:
-                
+            </li>
+
+            <li>Create a new file with the following example text
+                and save as Employee.txt within src/test/resources:
+
                 <ul>
-                Symbols allowed in the .txt file, and their meaning.
-                	<li>/** documentation comment</li>
-                	<li>* the field is required</li>
-                	<li>- SequenceDisabled</li>
-                	<li>! the field is a primary key</li>
-                	<li>? the field is a search Id</li>
-                	<li>// allow comments to be inserted after</li>
-                	
-                </ul>
-                
-				<pre>
+                    Symbols allowed in the .txt file, and their meaning.
+                    <li>/** documentation comment</li>
+                    <li>* the field is required</li>
+                    <li>- SequenceDisabled</li>
+                    <li>! the field is a primary key</li>
+                    <li>? the field is a search Id</li>
+                    <li>// allow comments to be inserted after</li>
+
+                </ul> <pre>
 /**
 * Employee table
 **/
@@ -99,30 +99,28 @@ STRING(132)    lastName*      // Last Name
 STRING(132)    firstName     // First Name
 LONG(10)	supervisorKey	SUPERVISOR_KEY?
 				</pre>
-			</li>
-			
-			<li>
-				Within src/test/java, create new Java Class Start and select public static void main(String[] args).
-			</li>
-			
-			<li>
-				Insert code into the Main of the newly created class. Import the required package org.batgen.CodeGen.
-				<ul><li>Takes 2 parameters: resource location and package name.</li></ul>
-				<pre>
+            </li>
+
+            <li>Within src/test/java, create new Java Class Start
+                and select public static void main(String[] args).</li>
+
+            <li>Insert code into the Main of the newly created
+                class. Import the required package org.batgen.CodeGen.
+                <ul>
+                    <li>Takes 2 parameters: resource location and
+                        package name.</li>
+                </ul> <pre>
 CodeGen codeGen = new CodeGen( "src/test/resources", "org.batgen.sample" );
 codeGen.run();
 				</pre>
-			</li>
-			
-			<li>
-				Select Run As Java Application, and press Enter when prompted.
-			</li>
-			
-			<li>
-				Refresh project and new files should be created.
-			</li>
-						
-		</ol>
+            </li>
 
-	</div>
+            <li>Select Run As Java Application, and press Enter
+                when prompted.</li>
+
+            <li>Refresh project and new files should be created.</li>
+
+        </ol>
+
+    </div>
 </div>

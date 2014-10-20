@@ -104,12 +104,12 @@ group: navigation
                 and select public static void main(String[] args).</li>
 
             <li>Insert code into the Main of the newly created
-                class. Import the required package org.batgen.CodeGen.
+                class. Import the required package org.batgen.CodeGen and org.batgen.DatabaseType.
                 <ul>
-                    <li>Takes 2 parameters: resource location and
-                        package name.</li>
+                    <li>Takes 3 parameters: resource location, package name, and 
+                    default database environment ( H2 or ORACLE )</li>
                 </ul> <pre>
-CodeGen codeGen = new CodeGen( "src/test/resources", "org.batgen.sample" );
+CodeGen codeGen = new CodeGen( "src/test/resources", "org.batgen.sample", DatabaseType.ORACLE );
 codeGen.run();
 				</pre>
             </li>

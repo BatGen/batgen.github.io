@@ -1,0 +1,64 @@
+---
+layout: page
+title: H2 Database
+header: H2 Database
+--- 
+<div class="col-md-3"
+    style="text-align: center; list-style-type: square;">
+    <h1>H2 Database</h1>
+    <br>
+    <h3>Other Databases</h3>
+    <ul style="text-align: left">
+        <li><a href="../Oracle.html" >Oracle XE</a></li>
+    </ul>
+</div>
+
+<div class="col-md-9">
+    <div>
+        <h3>How do I set up H2 Database?</h3>
+		
+		<ol>
+			<li><a href="http://www.h2database.com/html/download.html" target="_blank">
+			Download</a> the Platform Independent Zip version of the latest STABLE H2.</li>
+			
+			<li>Extract it to a directory of your choosing.</li>
+			
+			<li>At the h2 directory, create a startup.bat for PCs or startup.sh 
+			for Macs with the following commands:
+			<pre>java -cp bin/h2*.jar org.h2.tools.Server -baseDir . -properties "bin" -web -webPort 8086 -webAllowOthers -tcpPort 9096 -tcp -tcpAllowOthers -tcpPassword 123 </pre> </li>
+		
+			<li>At the h2 directory, create a shutdown.bat for PCs or shutdown.sh 
+			for Macs with the following commands:
+			<pre>java -cp bin/h2*.jar org.h2.tools.Server -tcpShutdown tcp://localhost:9096 -tcpPassword 123</pre> </li>
+			
+			<li>Open CommandPrompt/Terminal, navigate to your H2 directory, 
+			and start the startup.bat for PCs or startup.sh for Macs</li>
+			
+			<li>Open up <a href="http://localhost:8086" target="_blank">H2 Console</a></li>
+			
+			<li>Fill the fileds with following informations:
+				<ul>
+					<li>Setting Name: BatTutorial</li>
+					<li>Driver Class: org.h2.Driver</li>
+					<li>JDBC URL: jdbc:h2:tcp://localhost:9096/sample/testDB</li>
+					<li>User Name: sa</li>
+					<li>Password: 123</li>
+				</ul>
+				save the setting and then click 'connect'.
+			</li>
+			
+			<li>Enter the following command and click 'run' to reset the database.
+			<pre>DROP ALL OBJECTS </pre></li>
+			
+			<li>From Eclipse, under the sql folder, open up the CreateTables.sql file. 
+			Copy all the commands and paste into the console and click 'run'.</li>
+			
+			<li>Click on 'clear' to clear the console. Now your database is ready for use.</li>
+			
+			<li>Start the shutdown.bat for PCs or shutdown.sh for Macs to close the database when done using.</li>
+			
+			<li>Make sure the startup file is running before using the database.</li>
+		</ol>
+			
+    </div>
+</div>

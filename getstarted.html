@@ -16,6 +16,13 @@ group: navigation
                 Framework</a></li>
         <li><a href="http://www.h2database.com/html/main.html"
             target="_blank">H2 Database Engine</a></li>
+        <li><a href= "http://www.oracle.com/technetwork/database/database-technologies/express-edition/overview/index.html"  target="_blank"> Oracle XE</a></li>
+    </ul>
+    
+    <h3>Setup Databases</h3>
+    <ul style="text-align: left">
+    	<li><a href="../H2.html" >Setup H2 Database</a></li>
+        <li><a href="../Oracle.html" >Setup Oracle XE Database</a></li>
     </ul>
 </div>
 
@@ -31,7 +38,7 @@ group: navigation
         <br> For this tutorial, we will be using <a
             href="https://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1"
             target="_blank">Eclipse Luna</a>, which already have Maven
-        installed.
+        installed. 
 
         <ol>
             <li><a
@@ -42,7 +49,13 @@ group: navigation
                 Projects.</li>
 
             <li>Create a new Maven project: select simple project,
-                fill in required informations, click finish.</li>
+                fill in required informations:
+                <ul>
+                	<li>Group Id: batGen.Tutorial</li>
+                	<li>Artifact Id: batGenTutorial</li>
+                </ul>
+                Click finish.
+            </li>
 
             <li>Insert following dependencies into the pom.xml of
                 the new project: <pre>	
@@ -73,8 +86,8 @@ group: navigation
     			</pre>
             </li>
 
-            <li>Create a new file with the following example text
-                and save as Employee.txt within src/test/resources:
+            <li><a ref="https://github.com/BatGen/tutorial/archive/master.zip">Download </a> 
+            and extract the .txt files to src/test/resources:
 
                 <ul>
                     Symbols allowed in the .txt file, and their meaning.
@@ -84,24 +97,10 @@ group: navigation
                     <li>! the field is a primary key</li>
                     <li>? the field is a search Id</li>
                     <li>// allow comments to be inserted after</li>
-
-                </ul> <pre>
-/**
-* Employee table
-**/
-[Settings]
-PACKAGE org.batgen.sample
-CLASS       Employee
-[Fields]
-LONG(10)        employeeKey     EMPLOYEE_KEY!
-DOUBLE(10,2)    salary       // Salary of employee
-STRING(132)    lastName*      // Last Name
-STRING(132)    firstName     // First Name
-LONG(10)	supervisorKey	SUPERVISOR_KEY?
-				</pre>
+                </ul>
             </li>
 
-            <li>Within src/test/java, create new Java Class Start
+            <li>Within src/test/java, create new Java Class called Start
                 and select public static void main(String[] args).</li>
 
             <li>Insert code into the Main of the newly created
@@ -119,6 +118,10 @@ codeGen.run();
                 when prompted.</li>
 
             <li>Refresh project and new files should be created.</li>
+            
+            <li>Database must be setup before these files can be used. 
+            Use either <a href="../H2.html" >H2</a> or 
+            <a href="../Oracle.html" >Oracle XE</a></li>
 
         </ol>
 

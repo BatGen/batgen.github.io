@@ -25,15 +25,11 @@ header: H2 Database
 			
 			<li>At the h2 directory, create a startup.bat for PCs or startup.sh 
 			for Macs with the following commands:
-			{% highlight ruby %}
-			java -cp bin/h2*.jar org.h2.tools.Server -baseDir . -properties "bin" -web -webPort 8086 -webAllowOthers -tcpPort 9096 -tcp -tcpAllowOthers -tcpPassword 123
-			{% endhighlight %}</li>
+			<pre>java -cp bin/h2*.jar org.h2.tools.Server -baseDir . -properties "bin" -web -webPort 8086 -webAllowOthers -tcpPort 9096 -tcp -tcpAllowOthers -tcpPassword 123 </pre> </li>
 		
 			<li>At the h2 directory, create a shutdown.bat for PCs or shutdown.sh 
 			for Macs with the following commands:
-			{% highlight ruby %}
-			java -cp bin/h2*.jar org.h2.tools.Server -tcpShutdown tcp://localhost:9096 -tcpPassword 123
-			{% endhighlight %}</li>
+			<pre>java -cp bin/h2*.jar org.h2.tools.Server -tcpShutdown tcp://localhost:9096 -tcpPassword 123</pre> </li>
 			
 			<li>Open CommandPrompt/Terminal, navigate to your H2 directory, 
 			and start the startup.bat for PCs or startup.sh for Macs</li>
@@ -52,7 +48,7 @@ header: H2 Database
 			</li>
 			
 			<li>Enter the following command and click 'run' to reset the database.
-			{% highlight ruby %}DROP ALL OBJECTS {% endhighlight %}</li>
+			<pre>DROP ALL OBJECTS </pre></li>
 			
 			<li>From Eclipse, under the sql folder, open up the CreateTables.sql file. 
 			Copy all the commands and paste into the console and click 'run'.</li>

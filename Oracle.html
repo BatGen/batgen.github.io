@@ -61,7 +61,7 @@ header: Oracle XE Database
 			
 				<ul>Example:
 				<li>1st command: 
-{% highlight ruby %}
+<pre>
 create table EMPLOYEE (
     EMPLOYEE_KEY       NUMBER(10) not null,
     SALARY             NUMBER(10,2),
@@ -70,12 +70,12 @@ create table EMPLOYEE (
     SUPERVISOR_KEY     NUMBER(10),
     constraint EMPLOYEE_PK primary key (EMPLOYEE_KEY)
 );
-{% endhighlight %}
+</pre>
 				</li>
 				<li>2nd command:
-{% highlight ruby %}
+<pre>
 create sequence EMPLOYEE_SEQ;
-{% endhighlight %}
+</pre>
 				</li>
 				And so on, till all of the commands on CreateTables.sql had ran.
 				</ul>

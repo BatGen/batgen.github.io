@@ -43,10 +43,9 @@ group: navigation
         <ol>
             <li><a
                 href="https://github.com/BatGen/batGen/archive/master.zip">Download</a>
-                and extract files.</li>
-
-            <li>Import batGen into Eclipse as existing Maven
-                Projects.</li>
+                and extract files. Then import batGen into Eclipse as existing Maven
+                Projects.
+            </li>
 
             <li>Create a new Maven project: select simple project,
                 fill in required informations:
@@ -100,15 +99,13 @@ group: navigation
                 </ul>
             </li>
 
-            <li>Within src/test/java, create new Java Class called Start
-                and select public static void main(String[] args).</li>
-
-            <li>Insert code into the Main of the newly created
-                class. Import the required package org.batgen.CodeGen and org.batgen.DatabaseType.
+            <li>Within src/test/java, create a new Main class called start with the following code and 
+            	import the required 'package org.batgen.CodeGen' and 'org.batgen.DatabaseType'.
                 <ul>
                     <li>Takes 3 parameters: resource location, package name, and 
                     default database environment ( H2 or ORACLE )</li>
-                </ul> <pre>
+                </ul> 
+                <pre>
 CodeGen codeGen = new CodeGen( "src/test/resources", "org.batgen.sample", DatabaseType.ORACLE );
 codeGen.run();
 				</pre>

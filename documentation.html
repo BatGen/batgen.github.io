@@ -17,22 +17,7 @@ group: navigation
         supporting Data Access Object (DAO) and Business Object (BO)
         objects with the basic CRUD operations.
     </div>
-
-    <div>
-        <h3>How does it work?</h3>
-
-        To keep it simple, we rely heavily on creating conventions for
-        how projects are setup and how database column types are
-        associated with corresponding class variable types. <br />
-        <br /> For this reason, we recommend using this product on new
-        projects, as existing projects will already have established
-        standards. <br />
-        <br /> This is a conscious choice we made and it dramatically
-        simplifies the setup and configuration of new projects. It also
-        causes all projects that use this product to have a standard
-        directory structure for the project.
-    </div>
-
+    
     <div>
         <h3>Features</h3>
         <ul>
@@ -49,6 +34,85 @@ group: navigation
                 related class variables, and type information used to
                 generate the code.</li>
         </ul>
+    </div>
+
+    <div>
+        <h3>How does it work?</h3>
+
+        To keep it simple, we rely heavily on creating conventions for
+        how projects are setup and how database column types are
+        associated with corresponding class variable types. <br />
+        <br /> For this reason, we recommend using this product on new
+        projects, as existing projects will already have established
+        standards. <br />
+        <br /> This is a conscious choice we made and it dramatically
+        simplifies the setup and configuration of new projects. It also
+        causes all projects that use this product to have a standard
+        directory structure for the project.
+    </div>
+    
+    <div>
+    	<h3>Formatted Tables</h3>
+    	The tables used are formatted in an acceptable manner for the application to 
+    	create the generated files. Your files should end in .txt , should match the 
+    	below format, and should only contain one table. If your tables are not correctly 
+    	formatted, an error will occur during the implementation of the code generation 
+    	application. Each file is broken into three sections:
+    	
+    	<ol>
+    		<li>The first section is Comments.
+    			<ol>
+    				<li>Generally the comment section is used to define what the table 
+    				name is called.</li>
+    				<li>Comments here can be defined by a multi-line comment (starting 
+    				with /* and ending with */) or a single line comment (//).</li>
+    			</ol>
+    		</li>
+    		
+    		<li>The second section is Settings.
+    			<ol>
+    				<li>The keyword Settings must be surrounded by brackets ( [ ] ).
+    				Within the settings it contains the keywords package and class.</li>
+    				<li>PACKAGE specifies the file package destination (must be the same 
+    				within all tables).</li>
+    				<li>CLASS specifies the name of the table (java) and the database 
+    				name (sql) (The database name is not required).</li>
+    			</ol>
+    		</li>
+    		
+    		<li>The third section is Fields.
+    			<ol>
+    				<li>The keyword Fields must be surrounded by brackets ( [ ] ).</li>
+    				<li>The field section contains all the columns related to that table.</li>
+    				<li>The data type is on the left, followed by the name of the column 
+    				(camelCase), the database alias name (not required), special character 
+    				(not required), and a comment (not required)</li>
+    					<ul>
+    						<li>The applicable data types are: long, integer, double, string, 
+    							blob, date, and boolean.
+    						</li>
+    						<li>If the data type is an long, integer, or string, then you
+    						must also specify a precision (total number of digits).</li>
+    						<li>If the data type is an double, then you must also specify 
+    						a precision (total number of digits) and scale (number of 
+    						digits to the right of the decimal point).</li>
+    					</ul>
+    				<li>The special characters that are allowed are !, *, ? and -.</li>
+    					<ul>
+    						<li>! signifies that the column is a primary key to the table. 
+    						There can only be one primary key and it can only be 
+    						defined as a LONG(some value) or STRING(some value). If you 
+    						do not create a key column, one will be automatically 
+    						generated for you</li>
+    						<li>* signifies that the column is required, and cannot be null.</li>
+    						<li>? signifies that the column is a searchable ID, used to 
+    						get an list of all objects with same the ID.</li>
+    						<li>- signifies that the column has it's sequence disabled.</li>
+    					</ul>
+    			</ol>
+    		</li>
+    		
+    	</ol>
     </div>
 
     <div>

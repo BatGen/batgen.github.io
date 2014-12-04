@@ -87,10 +87,12 @@ group: navigation
     				(not required), and a comment (not required)</li>
     					<ul>
     						<li>The applicable data types are: long, integer, double, string, 
-    							blob, date, and boolean.
+    							blob, date, timestamp and boolean.
     						</li>
     						<li>If the data type is an long, integer, or string, then you
     						must also specify a precision (total number of digits).</li>
+    						<li>If the data type is an timestamp then you must also specify
+    						a precision (precision of the seconds ).</li>
     						<li>If the data type is an double, then you must also specify 
     						a precision (total number of digits) and scale (number of 
     						digits to the right of the decimal point).</li>

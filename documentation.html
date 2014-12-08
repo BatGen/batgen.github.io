@@ -116,18 +116,18 @@ LAST_NAME          VARCHAR2(132) NOT NULL,
     						<li>- signifies that the column has it's sequence disabled.</li>
 If it's disabled, it would not produce the following code in the xml file.
 <pre>
-<selectKey resultType="_long" keyProperty="key" order="BEFORE">
+&lt;selectKey resultType="_long" keyProperty="key" order="BEFORE"&gt;
 	select EMPLOYEE_SEQ.nextval from dual
-</selectKey>
+&lt;/selectKey&gt;
 </pre>
     						<li>? signifies that the column is a searchable ID, used to 
     						get an list of all objects with same the ID.</li>
 If it's enabled, it would produce the following code in the xml file.
 <pre>
-<select id="getListBySupervisorKey" parameterType="long" resultMap="EmployeeMapper">
+&lt;select id="getListBySupervisorKey" parameterType="long" resultMap="EmployeeMapper"&gt;
 	select * from EMPLOYEE
 	where SUPERVISOR_KEY = #{supervisorKey}
-</select>
+&lt;/select&gt;
 </pre>
 	
     					</ul>

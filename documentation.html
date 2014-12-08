@@ -104,10 +104,29 @@ group: navigation
     						defined as a LONG(some value) or STRING(some value). If you 
     						do not create a key column, one will be automatically 
     						generated for you</li>
+    						<pre>
+    						    KEY                NUMBER(10) NOT NULL,
+    						</pre>
     						<li>* signifies that the column is required, and cannot be null.</li>
+    						<pre>
+    						    LAST_NAME          VARCHAR2(132) NOT NULL,
+    						</pre>
+    						<li>- signifies that the column has it's sequence disabled.</li>
+    						would not produce the following code.
+    						<pre>
+    						    <selectKey resultType="_long" keyProperty="key" order="BEFORE">
+                                    select EMPLOYEE_SEQ.nextval from dual
+                                </selectKey>
+    						</pre>
     						<li>? signifies that the column is a searchable ID, used to 
     						get an list of all objects with same the ID.</li>
-    						<li>- signifies that the column has it's sequence disabled.</li>
+    						<pre>
+    						    <select id="getListBySupervisorKey" parameterType="long" resultMap="EmployeeMapper">
+                                    select * from EMPLOYEE
+                                    where SUPERVISOR_KEY = #{supervisorKey}
+                                </select>
+    						</pre>
+	
     					</ul>
     			</ol>
     		</li>

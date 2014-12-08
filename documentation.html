@@ -104,28 +104,31 @@ group: navigation
     						defined as a LONG(some value) or STRING(some value). If you 
     						do not create a key column, one will be automatically 
     						generated for you</li>
-    						<pre>
-    						    KEY                NUMBER(10) NOT NULL,
-    						</pre>
+The automatically generated key for the table. Used for creating the table.
+<pre>
+KEY                NUMBER(10) NOT NULL,
+</pre>
     						<li>* signifies that the column is required, and cannot be null.</li>
-    						<pre>
-    						    LAST_NAME          VARCHAR2(132) NOT NULL,
-    						</pre>
+The required column for the table. Used for creating the table.
+<pre>
+LAST_NAME          VARCHAR2(132) NOT NULL,
+</pre>
     						<li>- signifies that the column has it's sequence disabled.</li>
-    						would not produce the following code.
-    						<pre>
-    						    <selectKey resultType="_long" keyProperty="key" order="BEFORE">
-                                    select EMPLOYEE_SEQ.nextval from dual
-                                </selectKey>
-    						</pre>
+If it's disabled, it would not produce the following code in the xml file.
+<pre>
+<selectKey resultType="_long" keyProperty="key" order="BEFORE">
+	select EMPLOYEE_SEQ.nextval from dual
+</selectKey>
+</pre>
     						<li>? signifies that the column is a searchable ID, used to 
     						get an list of all objects with same the ID.</li>
-    						<pre>
-    						    <select id="getListBySupervisorKey" parameterType="long" resultMap="EmployeeMapper">
-                                    select * from EMPLOYEE
-                                    where SUPERVISOR_KEY = #{supervisorKey}
-                                </select>
-    						</pre>
+If it's enabled, it would produce the following code in the xml file.
+<pre>
+<select id="getListBySupervisorKey" parameterType="long" resultMap="EmployeeMapper">
+	select * from EMPLOYEE
+	where SUPERVISOR_KEY = #{supervisorKey}
+</select>
+</pre>
 	
     					</ul>
     			</ol>

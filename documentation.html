@@ -139,8 +139,8 @@ If it's enabled, it would produce the following code in the xml file.
     			<ol>
     			    <li>The keyword Indexes must be surrounded by brackets ( [ ] ).</li>
     				<li>Use to create compound indexes within current table</li>
-    				<li>Requires at least two inputs: the index name, and all the columns names
-    				separated by commas.</li>
+    				<li>Requires at least two inputs: the index name, and all the columns 
+    				names(second column in the txt file) separated by commas.</li>
     			</ol>
 Produces the following code for the sql file.  			
 <pre>
@@ -151,8 +151,8 @@ Produces the following code for the sql file.
     			<ol>
     			    <li>The keyword ForeignKeys must be surrounded by brackets ( [ ] ).</li>
     				<li>Use to create references to a column from another table</li>
-    				<li>Requires three inputs: the column name, the word 'constrainsTo', 
-    				and the other table name.other column name</li>
+    				<li>Requires three inputs: the column name(second column in the txt file), 
+    				the word 'constrainsTo', and the other table name.other column name</li>
     			</ol>
 Creates an AlterTable.sql file and addes the following code.
 <pre>

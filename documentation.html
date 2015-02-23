@@ -109,9 +109,10 @@ TIMESTAMP(0)		entryDat	ENTRY_DTTM*
 </pre>
     						</li>
     						<li>If the data type is an vstring, then you must also specify
-    						the field where it's from, the begining index, and the length.
+    						a magnitude (total number of digits) and also a comment section
+    						with sql statement on how to retieve it surrounded by `.
 <pre>
-VSTRING(SSN, 6, 4)	last4SSN	LAST_4_SSN*
+VSTRING(4)	last4SSN	LAST_4_SSN*	// last four digits of SSN `cast(substr(SSN, 5, 4) as varchar2(4))`
 </pre>  
     						</li>
     					</ul>

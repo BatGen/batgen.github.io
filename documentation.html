@@ -95,15 +95,15 @@ group: navigation
 STRING(132)		lastName	LAST_NAME*
 </pre> 
     						</li>
-    						<li>If the data type is an timestamp then you must also specify
-    						a precision (precision of the seconds ).
+    						<li>If the data type is an double, then you must also specify 
+    						a precision (total number of digits) and scale (number of 
+    						digits to the right of the decimal point).
 <pre>
 DOUBLE(20,5)		hourWage	HOUR_WAGE*
 </pre> 
     						</li>
-    						<li>If the data type is an double, then you must also specify 
-    						a precision (total number of digits) and scale (number of 
-    						digits to the right of the decimal point).
+    						<li>If the data type is an timestamp then you must also specify
+    						a precision (precision of the seconds ).
 <pre>
 TIMESTAMP(0)		entryDat	ENTRY_DTTM*
 </pre>

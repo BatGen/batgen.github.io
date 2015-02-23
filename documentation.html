@@ -112,7 +112,7 @@ TIMESTAMP(0)		entryDat	ENTRY_DTTM*
     						a magnitude (total number of digits) and also a comment section
     						with sql statement on how to retieve it surrounded by `.
 <pre>
-VSTRING(4)	last4SSN	LAST_4_SSN*	// last four digits of SSN `cast(substr(SSN, 5, 4) as varchar2(4))`
+VSTRING(4)	last4SSN	LAST_4_SSN*	// last four digits of SSN `cast(substr(SSN, 6, 4) as varchar2(4))`
 </pre>  
     						</li>
     					</ul>

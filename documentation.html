@@ -90,12 +90,24 @@ group: navigation
     							blob, clob, date, timestamp, boolean and vstring.
     						</li>
     						<li>If the data type is an long, integer, or string, then you
-    						must also specify a precision (total number of digits).</li>
+    						must also specify a precision (total number of digits).
+<pre>
+STRING(132)		lastName	LAST_NAME*
+</pre> 
+    						</li>
     						<li>If the data type is an timestamp then you must also specify
-    						a precision (precision of the seconds ).</li>
+    						a precision (precision of the seconds ).
+<pre>
+DOUBLE(20,5)		hourWage	HOUR_WAGE*
+</pre> 
+    						</li>
     						<li>If the data type is an double, then you must also specify 
     						a precision (total number of digits) and scale (number of 
-    						digits to the right of the decimal point).</li>
+    						digits to the right of the decimal point).
+<pre>
+TIMESTAMP(0)		entryDat	ENTRY_DTTM*
+</pre>
+    						</li>
     						<li>If the data type is an vstring, then you must also specify
     						the field where it's from, the begining index, and the length.
 <pre>

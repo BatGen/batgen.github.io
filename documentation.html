@@ -90,16 +90,16 @@ group: navigation
     							blob, clob, date, timestamp, boolean and vstring.
     						</li>
     						<li>If the data type is an long, integer, or string, then you
-    						must also specify a precision (total number of digits).
+    						must also specify a magnitude (total number of digits).
 <pre>
 STRING(132)		lastName	LAST_NAME*
 </pre> 
     						</li>
     						<li>If the data type is an double, then you must also specify 
-    						a precision (total number of digits) and scale (number of 
-    						digits to the right of the decimal point).
+    						a interger part (number of digits to the left of the decimal point)
+    						and precision (number of digits to the right of the decimal point).
 <pre>
-DOUBLE(5,2)		hourWage	HOUR_WAGE*
+DOUBLE(3,2)		hourWage	HOUR_WAGE*
 </pre> 
     						</li>
     						<li>If the data type is an timestamp then you must also specify

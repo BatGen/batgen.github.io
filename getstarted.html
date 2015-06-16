@@ -110,7 +110,7 @@ STRING(132)    firstName     // First Name
 LONG(10)	supervisorKey	SUPERVISOR_KEY?
 
 [Indexes]
-employeeName     lastName, firstName
+EMPLOYEE_NAME     lastName, firstName
 
 [ForeignKeys]
 supervisorKey constrainsTo Supervisor.supervisorKey			
@@ -150,7 +150,7 @@ BOOLEAN        active     ACTIVE
 BLOB           profile    PROFILE
 
 [Indexes]
-name2     lastName, firstName			
+SUPERVISOR_NAME     lastName, firstName			
 			
 			</pre>
 			</li>

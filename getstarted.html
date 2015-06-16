@@ -93,11 +93,31 @@ express-edition/overview/index.html"  target="_blank"> Oracle XE</a></li>
 &lt;/dependencies&gt;
 </pre>
             </li>
+			<li> Create the sample Employee.txt under /src/test/resources:<br/>
+			
+			<pre>
+/**
+ * The Employee Table.
+ */
+[Settings]
+CLASS       Employee
 
-            <li><a href="https://gist.github.com/lin1412/239e33462ed64dd1c0ba/download">Download</a> 
-            and extract the .txt files to src/test/resources:
+[Fields]
 
-                <ul> Special Notations in the txt files.
+DOUBLE(10,2)    salary       // Salary of employee
+STRING(132)    lastName*      // Last Name
+STRING(132)    firstName     // First Name
+LONG(10)	supervisorKey	SUPERVISOR_KEY?
+
+[Indexes]
+employeeName     lastName, firstName
+
+[ForeignKeys]
+supervisorKey constrainsTo Supervisor.supervisorKey			
+			
+			</pre>
+			Note the use of special characters in the file:
+                <ul> 
                     <li>/** documentation comment</li>
                     <li>* the field is required</li>
                     <li>- SequenceDisabled</li>
@@ -105,17 +125,56 @@ express-edition/overview/index.html"  target="_blank"> Oracle XE</a></li>
                     <li>? the field is a search Id</li>
                     <li>// allow comments to be inserted after</li>
                 </ul>
-            </li>
 
-            <li>Within src/test/java, create a new Main class called start with the following code and 
+			</li>
+
+			<li>Create the sample Supervisor.txt under /src/test/resources:
+			
+			<pre>
+/**
+ * Activate supervisors.
+ */
+
+[Settings]
+CLASS Supervisor SUPVSR
+
+[Fields]
+
+LONG(10)        supervisorKey       SUPERVISOR_KEY!-
+INTEGER(4)     count      CNT
+DOUBLE(10,2)   salary     SLRY
+STRING(132)    lastName   LST_NME*
+STRING(132)    firstName  FST_NME*
+DATE           hireDate   HIRE_DATE
+BOOLEAN        active     ACTIVE
+BLOB           profile    PROFILE
+
+[Indexes]
+name2     lastName, firstName			
+			
+			</pre>
+			</li>
+			
+            <li>Within src/test/java, create a new CodeGen class called start with the following code and 
             	import the required 'package org.batgen.CodeGen' and 'org.batgen.DatabaseType'.
                 <ul>
                     <li>Takes 3 parameters: resource location, package name, and 
                     default database environment ( H2 or ORACLE )</li>
                 </ul> 
                 <pre>
-BatGen batGen = new BatGen( "src/test/resources", "org.batgen.sample", DatabaseType.ORACLE );
-batGen.run();
+package codegen;
+
+import org.batgen.BatGen;
+import org.batgen.DatabaseType;
+
+public class CodeGen {
+
+	public static void main( String[]args ) {
+		BatGen batGen = new BatGen( "src/test/resources", "test.app.sample", DatabaseType.H2 );
+		batGen.run();
+	}
+	
+}
 				</pre>
             </li>
 

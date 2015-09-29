@@ -175,7 +175,7 @@ Produces the following code for the sql file.
     			</ol>
 Creates an AlterTable.sql file and addes the following code.
 <pre>
-	ALTER TABLE EMPLOYEE CONSTRAINT FK_EMPLOYEE_1 FOREIGN KEY (SUPERVISOR_KEY) REFERENCES SUPVSR(SUPERVISOR_KEY);
+	ALTER TABLE EMPLOYEE ADD CONSTRAINT FK_EMPLOYEE_1 FOREIGN KEY (SUPERVISOR_KEY) REFERENCES SUPVSR(SUPERVISOR_KEY);
 </pre>
     		</li>
     		
